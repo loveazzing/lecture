@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- javascript 인라인 사용 전 -->
+<script>
+
+    var username = [${}]
+
+</script>
+<script th:inline="javascript">
+    [# th:each="user : ${users}"]
+        var username[[${userStat.Count}]] = [[${user.username}]];
+        var age[[${userStat.Count}]] = [[${user.age}]];
+        var user[[${userStat.Count}]] = [[${user}]];
+    [/]
+        var users = [[${users}]];
+</script>
+
+
+
+</body>
+</html>
